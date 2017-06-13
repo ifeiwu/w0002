@@ -1,0 +1,2 @@
+<?php
+namespace ifeiwu\db\statement; use ifeiwu\Exception; use ifeiwu\db\StatementAbstract; class Delete extends StatementAbstract { protected $is = false; public function __construct($db, $table, $wheres) { $this->db = $db; $this->sql = 'DELETE FROM `' . $table . '`'; if ($wheres !== true) { $this->where($wheres); } if ($this->db->getDebug() == true) { $this->db->setLog($this->debug()); } $this->stmt = $this->db->prepare($this->sql); $this->is = $this->stmt->execute($this->values); } public function is() { return $this->is; } public function run() { return $this->stmt; } } 

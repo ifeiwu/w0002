@@ -1,0 +1,2 @@
+<?php
+ namespace ifeiwu\log\adapter; use ifeiwu\log\AdapterAbstract; class Chrome extends AdapterAbstract { public function __construct() { } public function error($message) { $this->_log('error', $message); } public function debug($message) { $this->_log('debug', $message); } protected function _log($type, $message) { $data = array( 'columns' => array('log', 'type'), 'rows' => array(array(array($this->_logs($message)), $type)) ); header('X-ChromeLogger-Data: ' . base64_encode(utf8_encode(json_encode($data)))); } }

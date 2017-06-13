@@ -1,0 +1,2 @@
+<?php
+require 'base.php'; require LIB_PATH . 'Loader.php'; ifeiwu\Loader::register(); ifeiwu\Error::register(); require IFW_PATH . 'helper.php'; require APP_PATH . 'common.php'; ifeiwu\Router::register();

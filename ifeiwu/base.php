@@ -1,0 +1,2 @@
+<?php
+date_default_timezone_set('PRC'); define('DS', DIRECTORY_SEPARATOR); define('APP_PATH', dirname($_SERVER['SCRIPT_FILENAME']) . DS); define('ROOT_PATH', dirname(realpath(APP_PATH)) . DS); define('IFW_PATH', APP_PATH . 'ifeiwu' . DS); define('LIB_PATH', IFW_PATH . 'library' . DS); define('EXT_PATH', IFW_PATH . 'extend' . DS); define('VEN_PATH', IFW_PATH . 'vendor' . DS); 

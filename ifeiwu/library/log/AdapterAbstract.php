@@ -1,0 +1,2 @@
+<?php
+namespace ifeiwu\log; abstract class AdapterAbstract implements AdapterInterface { protected function _logs($message) { $logs = array(); if ($message instanceof \Exception) { $logs['level'] = $message->getCode(); $logs['message'] = $message->getMessage(); $logs['file'] = $message->getFile(); $logs['line'] = $message->getLine(); $logs['trace'] = explode("\n", trim($message->getTraceAsString(), "\r\n")); } elseif (is_string($message)) { $logs['message'] = $message; } else { $logs = $message; } return $logs; } } 
